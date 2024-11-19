@@ -12,3 +12,4 @@ class HospitalPatient(models.Model):
     ], string='Gender')
     date_of_birth = fields.Date(string='Date of Birth')
     ref = fields.Char(string='Reference', default='patients')
+    active = fields.Boolean('Active', default=True)

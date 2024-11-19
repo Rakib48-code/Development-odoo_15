@@ -13,6 +13,7 @@
     'data': [
         'views/hospital_menu_view.xml',
         'views/patient_view_menu.xml',
+        'views/female_patient_view.xml',
         'security/ir.model.access.csv'
     ],
     'installable': True,
