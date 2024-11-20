@@ -9,9 +9,10 @@
         appointment scheduling, staff and payroll management, billing, and medical inventory tracking. 
         It is designed to be user-friendly and adaptable for hospitals of varying sizes.
     """,
-    'depends': ['base'],
+    'depends': ['base','mail'],
     'data': [
         'views/hospital_menu_view.xml',
+        'views/appointment_view_menu.xml',
         'views/patient_view_menu.xml',
         'views/female_patient_view.xml',
         'security/ir.model.access.csv'
