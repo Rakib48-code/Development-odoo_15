@@ -29,6 +29,9 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form>
+                 <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
@@ -40,6 +43,14 @@
                             <field name="appointment_time"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Prescription">
+
+                        </page>
+                        <page string="Pharmacy">
+
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

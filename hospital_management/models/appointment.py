@@ -12,3 +12,8 @@ class HospitalAppointment(models.Model):
         ('male', 'Male'),
         ('female', 'Female')
     ], string='Gender', related='patient_id.gender')
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('confirm','Confirmed'),
+        ('approve','Approved'),
+    ], string="Status")

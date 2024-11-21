@@ -7,10 +7,12 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name" string="Patient Name"/>
+                <filter name="patients" string="Patient Name" domain="[('patients','=',True)]"/>
                 <filter name="male" string="Male" domain="[('gender','=','male')]"/>
                 <filter name="female" string="Female" domain="[('gender','=','female')]"/>
                 <separator/>
-                <filter name="kids" string="Kids" domain="[('age','&lt;=', 5)]"/><separator/>
+                <filter name="kids" string="Kids" domain="[('age','&lt;=', 5)]"/>
+                <separator/>
                 <filter name="archived" string="Archived" domain="[('active','=', False)]"/>
                 <group expand="0" string="Group By">
                     <filter name="group_by_gender" string="Gender" context="{'group_by':'gender'}"/>
@@ -60,13 +62,21 @@
                             <field name="active" invisible="1"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Prescription">
+
+                        </page>
+                        <page string="Pharmacy">
+
+                        </page>
+                    </notebook>
                 </sheet>
                 <!-- Chatter -->
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" groups="base.group_user"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
-                    </div>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
@@ -75,7 +85,7 @@
         <field name="name">Patients</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{'search_default_group_by_gender':1}</field>
+        <field name="context">{'search_default_patients':1}</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
